@@ -1,6 +1,8 @@
 ﻿
 // ETAPA 1 
-string name = "KIOSCO EL RECREO";
+const string name = "KIOSCO EL RECREO";
+const decimal descuento10 = 0.10m;
+const decimal descuento5 = 0.05m;
 Console.WriteLine(name);
 
 Console.WriteLine("ingrese su nombre: ");
@@ -38,8 +40,23 @@ do
             break;
 
         case 2:
+            decimal descuento = 0;
+
+            if (total > 50000)
+            {
+                descuento = total * descuento10;
+            }
+            else if (total > 20000)
+            {
+                descuento = total * descuento5;
+            }
+
+            decimal totalFinal = total - descuento;
+
             Console.WriteLine($"Cantidad de productos: {cantidadProductos}");
-            Console.WriteLine($"Total: ${total}");
+            Console.WriteLine($"Subtotal: ${total}");
+            Console.WriteLine($"Descuento: ${descuento}");
+            Console.WriteLine($"Total: ${totalFinal}");
             break;
 
         default:
@@ -48,3 +65,4 @@ do
     }
 }
 while (opcion != 2);
+

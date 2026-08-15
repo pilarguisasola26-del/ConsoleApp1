@@ -89,11 +89,40 @@ do
             }
             while (medioPago != 1 && medioPago != 2 && medioPago != 3);
 
-            Console.WriteLine($"Cantidad de productos: {cantidadProductos}");
+            for (int i = 0; i < 30; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine(name);
+
+            for (int i = 0; i < 30; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine($"Cajero: {user}");
+            Console.WriteLine($"Productos: {cantidadProductos}");
             Console.WriteLine($"Subtotal: ${total}");
             Console.WriteLine($"Descuento: ${descuento}");
             Console.WriteLine($"Recargo: ${recargo}");
-            Console.WriteLine($"Total: ${totalFinal}");
+
+            for (int i = 0; i < 30; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine($"TOTAL: ${totalFinal}");
+
+            for (int i = 0; i < 30; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
             break;
 
         default:

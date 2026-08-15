@@ -9,7 +9,11 @@ Console.WriteLine ($"bienevenida {user}. la caja esta abierta");
 Console.ReadLine();
 
 //ETAPA 2 
-string Producto = ".";
-Console.WriteLine(Producto);
+
 Console.WriteLine("ingrese nombre del producto: ");
 string Product = Console.ReadLine();
+
+Console.WriteLine("ingrese precio: ");
+decimal Precio = decimal.Parse(Console.ReadLine());
+Console.WriteLine($"Producto: {Product}");
+Console.WriteLine($"Precio: ${Precio}");

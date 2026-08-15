@@ -3,6 +3,8 @@
 const string name = "KIOSCO EL RECREO";
 const decimal descuento10 = 0.10m;
 const decimal descuento5 = 0.05m;
+const decimal descuentoEfectivo = 0.10m;
+const decimal recargoCredito = 0.15m;
 Console.WriteLine(name);
 
 Console.WriteLine("ingrese su nombre: ");
@@ -52,10 +54,45 @@ do
             }
 
             decimal totalFinal = total - descuento;
+            int medioPago;
+            decimal recargo = 0;
+
+            do
+            {
+                Console.WriteLine("Medio de pago:");
+                Console.WriteLine("1 - Efectivo");
+                Console.WriteLine("2 - Débito");
+                Console.WriteLine("3 - Crédito");
+
+                medioPago = int.Parse(Console.ReadLine());
+
+                switch (medioPago)
+                {
+                    case 1:
+                        decimal descuentoAdicional = totalFinal * descuentoEfectivo;
+                        descuento += descuentoAdicional;
+                        totalFinal -= descuentoAdicional;
+                        break;
+
+                    case 2:
+                        break;
+
+                    case 3:
+                        recargo = totalFinal * recargoCredito;
+                        totalFinal += recargo;
+                        break;
+
+                    default:
+                        Console.WriteLine("Opción inválida.");
+                        break;
+                }
+            }
+            while (medioPago != 1 && medioPago != 2 && medioPago != 3);
 
             Console.WriteLine($"Cantidad de productos: {cantidadProductos}");
             Console.WriteLine($"Subtotal: ${total}");
             Console.WriteLine($"Descuento: ${descuento}");
+            Console.WriteLine($"Recargo: ${recargo}");
             Console.WriteLine($"Total: ${totalFinal}");
             break;
 

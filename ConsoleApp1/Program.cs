@@ -9,7 +9,7 @@ Console.WriteLine(name);
 
 Console.WriteLine("ingrese su nombre: ");
 string user = Console.ReadLine();
-Console.WriteLine ($"bienevenida {user}. la caja esta abierta");
+Console.WriteLine ($"Bienevenida {user}. la caja esta abierta");
 
 // ETAPA 2 y 3
 
